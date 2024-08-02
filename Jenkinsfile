@@ -1,6 +1,11 @@
 pipeline {
     agent any
-
+    
+    
+    tools {
+        // Chỉ định phiên bản Maven cần sử dụng
+        maven 'Maven 3.8.7'
+    }
     stages {
         stage('Checkout') {
             steps {
