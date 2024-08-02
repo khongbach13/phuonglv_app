@@ -30,19 +30,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Dừng và xóa container cũ nếu có
-                    sh '''
-                    docker stop my-tomcat-container || true
-                    docker rm my-tomcat-container || true
-                    '''
-
                     // Chạy container Tomcat mới với ứng dụng đã triển khai
-                    sh '''
-                    docker run -d \
-                        --name my-tomcat-container \
-                        -p 8088:8080 \
-                        my-tomcat:latest
-                    '''
+                    sh 'docker run -d --name my-tomcat-container  -p 8088:8080 my-tomcat:latest'                    '
                 }
             }
         }
