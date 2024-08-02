@@ -5,5 +5,5 @@ FROM tomcat:9.0
 RUN rm -rf /usr/local/tomcat/webapps/
 
 # Sao chép file WAR vào thư mục webapps của Tomcat
-COPY target/phuonglv_app.war /usr/local/tomcat/webapps/phuonglv_app.war
+COPY ./target/webapp-1.0-SNAPSHOT.war.war /usr/local/tomcat/webapps/phuonglv_app.war
 
