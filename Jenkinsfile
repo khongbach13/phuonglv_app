@@ -19,14 +19,6 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Xây dựng Docker image từ Dockerfile
-                    docker.build("my-tomcat:latest")
-                }
-            }
-        }
     }
     post {
         success {
