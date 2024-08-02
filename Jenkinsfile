@@ -27,14 +27,6 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                script {
-                    // Chạy container Tomcat mới với ứng dụng đã triển khai
-                    sh '''docker run -d --name my-tomcat-container -p 8088:8080 my-tomcat:latest'''                    '
-                }
-            }
-        }
     }
     post {
         success {
